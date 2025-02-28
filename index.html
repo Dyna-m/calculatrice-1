@@ -1,0 +1,46 @@
+# Programme d'une calculatrice simple en Python
+
+def addition(a, b):
+    return a + b
+
+def soustraction(a, b):
+    return a - b
+
+def multiplication(a, b):
+    return a * b
+
+def division(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Erreur : Division par zéro !"
+
+print("Bienvenue sur la calculatrice Python !")
+print("Choisissez une opération :")
+print("1. Addition")
+print("2. Soustraction")
+print("3. Multiplication")
+print("4. Division")
+
+# Demander à l'utilisateur de choisir une opération
+choix = input("Entrez le numéro de l'opération (1/2/3/4) : ")
+
+# Demander à l'utilisateur d'entrer les nombres
+try:
+    num1 = float(input("Entrez le premier nombre : "))
+    num2 = float(input("Entrez le deuxième nombre : "))
+except ValueError:
+    print("Erreur : Veuillez entrer des nombres valides !")
+    exit()
+
+# Effectuer l'opération en fonction du choix
+if choix == "1":
+    print("Résultat :", addition(num1, num2))
+elif choix == "2":
+    print("Résultat :", soustraction(num1, num2))
+elif choix == "3":
+    print("Résultat :", multiplication(num1, num2))
+elif choix == "4":
+    print("Résultat :", division(num1, num2))
+else:
+    print("Erreur : Choix invalide !")
